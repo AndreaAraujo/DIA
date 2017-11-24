@@ -1,0 +1,96 @@
+<Project>
+  <Name>Sin titulo</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Sin titulo</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Class">
+        <Name>Actividad</Name>
+        <Access>Public</Access>
+        <Location left="405" top="56" />
+        <Size width="162" height="184" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">int minutos</Member>
+        <Member type="Field">int segundos</Member>
+        <Member type="Field">int distancia</Member>
+        <Member type="Field">string notas</Member>
+        <Member type="Field">date fecha</Member>
+        <Member type="Method">public string toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Actividades</Name>
+        <Access>Public</Access>
+        <Location left="133" top="56" />
+        <Size width="188" height="281" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Actividad&gt; actividades</Member>
+        <Member type="Method">public void Add(Actividad a)</Member>
+        <Member type="Method">public void Delete(Actividad a)</Member>
+        <Member type="Method">public int Count()</Member>
+        <Member type="Method">public void Get(int i)</Member>
+        <Member type="Method">public void GuardarXML()</Member>
+        <Member type="Method">public static Actividades RecuperaXML()</Member>
+        <Member type="Method">public int DistanciaMensual(int mes)</Member>
+        <Member type="Method">public int[] DistanciasMensuales()</Member>
+        <Member type="Method">public int TiempoMensual(int mes)</Member>
+        <Member type="Method">public int[] TiemposMensuales()</Member>
+        <Member type="Method">public string toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Entrenamiento</Name>
+        <Access>Public</Access>
+        <Location left="667" top="56" />
+        <Size width="181" height="185" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Actividades&gt; actividades</Member>
+        <Member type="Field">string notas</Member>
+        <Member type="Field">Medida medida</Member>
+        <Member type="Field">Date fecha</Member>
+        <Member type="Method">public Entrenamiento CreaEntrenamiento(List&lt;Actividad&gt; actividades, string notas, Medida medida, Date fecha)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DiarioDeEntrenamiento</Name>
+        <Access>Public</Access>
+        <Location left="930" top="56" />
+        <Size width="175" height="185" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Entrenamiento&gt; entrenamientos</Member>
+        <Member type="Field">string archivoXML</Member>
+        <Member type="Method">public void GuardaXML()</Member>
+        <Member type="Method">public void GuardaXML(string archivo)</Member>
+        <Member type="Method">public Entrenamiento[] RecuperaXML(string arhivo)</Member>
+        <Member type="Method">public DiaroDeEntrenamiento Crea()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="0">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+</Project>
