@@ -69,15 +69,17 @@
         <Name>InformeAnual</Name>
         <Access>Public</Access>
         <Location left="930" top="309" />
-        <Size width="162" height="216" />
+        <Size width="162" height="230" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private DiarioDeEntrenamiento entrenamientos</Member>
         <Member type="Field">private List&lt;Series&gt; datosSeries</Member>
-        <Member type="Field">private Series[] puntosSeries</Member>
-        <Member type="Field">private Chart chart</Member>
+        <Member type="Field">private Series[] valorSeries</Member>
+        <Member type="Field">public Chart chart</Member>
         <Member type="Field">private Panel panel1</Member>
+        <Member type="Field">private int[ ] valoresSerie1</Member>
+        <Member type="Field">private int[ ] valoresSerie2</Member>
         <Member type="Constructor">public InformeAnual()</Member>
-        <Member type="Method">private void InitializeComponent()</Member>
+        <Member type="Method">private void Build()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
@@ -95,50 +97,57 @@
         <Name>Chart</Name>
         <Access>Public</Access>
         <Location left="965" top="622" />
-        <Size width="162" height="128" />
+        <Size width="162" height="247" />
         <Collapsed>False</Collapsed>
-        <Member type="Field">public Graphics grf</Member>
+        <Member type="Field">private Graphics grf</Member>
+        <Member type="Field">private List&lt;int&gt; values1</Member>
+        <Member type="Field">private int[ ] normalizedData1</Member>
+        <Member type="Field">private List&lt;int&gt; values2</Member>
+        <Member type="Field">private int[ ] normalizedData2</Member>
         <Member type="Constructor">public Chart()</Member>
-        <Member type="Method">private void Build()</Member>
+        <Member type="Method">public void Draw()</Member>
+        <Member type="Method">public void DrawDataTwo()</Member>
+        <Member type="Method">private void NormalizeDataOne()</Member>
+        <Member type="Method">private void NormalizeDataTwo()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Association" first="2" second="0">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Association" first="3" second="2">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Association" first="4" second="3">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
       <Relationship type="Dependency" first="5" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
       </Relationship>
       <Relationship type="Dependency" first="6" second="4">
-        <Label>
-        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
       </Relationship>
