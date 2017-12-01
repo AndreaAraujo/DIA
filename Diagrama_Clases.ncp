@@ -7,7 +7,7 @@
       <Entity type="Class">
         <Name>Actividad</Name>
         <Access>Public</Access>
-        <Location left="405" top="56" />
+        <Location left="490" top="56" />
         <Size width="162" height="184" />
         <Collapsed>False</Collapsed>
         <Member type="Field">int minutos</Member>
@@ -21,7 +21,7 @@
       <Entity type="Class">
         <Name>Actividades</Name>
         <Access>Public</Access>
-        <Location left="133" top="56" />
+        <Location left="179" top="33" />
         <Size width="188" height="281" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;Actividad&gt; actividades</Member>
@@ -41,7 +41,7 @@
       <Entity type="Class">
         <Name>Entrenamiento</Name>
         <Access>Public</Access>
-        <Location left="667" top="56" />
+        <Location left="733" top="251" />
         <Size width="181" height="185" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;Actividades&gt; actividades</Member>
@@ -54,7 +54,7 @@
       <Entity type="Class">
         <Name>DiarioDeEntrenamiento</Name>
         <Access>Public</Access>
-        <Location left="930" top="56" />
+        <Location left="999" top="102" />
         <Size width="175" height="185" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;Entrenamiento&gt; entrenamientos</Member>
@@ -68,7 +68,7 @@
       <Entity type="Class">
         <Name>InformeAnual</Name>
         <Access>Public</Access>
-        <Location left="930" top="309" />
+        <Location left="999" top="408" />
         <Size width="162" height="247" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private DiarioDeEntrenamiento entrenamientos</Member>
@@ -86,7 +86,7 @@
       <Entity type="Class">
         <Name>Series</Name>
         <Access>Public</Access>
-        <Location left="689" top="525" />
+        <Location left="1109" top="724" />
         <Size width="162" height="128" />
         <Collapsed>False</Collapsed>
         <Member type="Field">public DateTime Fecha</Member>
@@ -97,7 +97,7 @@
       <Entity type="Class">
         <Name>Chart</Name>
         <Access>Public</Access>
-        <Location left="965" top="622" />
+        <Location left="1274" top="408" />
         <Size width="162" height="247" />
         <Collapsed>False</Collapsed>
         <Member type="Field">private Graphics grf</Member>
@@ -110,6 +110,79 @@
         <Member type="Method">public void DrawDataTwo()</Member>
         <Member type="Method">private void NormalizeDataOne()</Member>
         <Member type="Method">private void NormalizeDataTwo()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>RegistroMedidas</Name>
+        <Access>Public</Access>
+        <Location left="48" top="433" />
+        <Size width="188" height="213" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">List&lt;Medida&gt; medidas</Member>
+        <Member type="Method">public void Add(Medida m)</Member>
+        <Member type="Method">public void Delete(Actividad a)</Member>
+        <Member type="Method">public int Count()</Member>
+        <Member type="Method">public void GuardaXML()</Member>
+        <Member type="Method">public static Actividades RecuperaXML()</Member>
+        <Member type="Method">public List&lt;Medida&gt; MedidasMes(string mes)</Member>
+        <Member type="Method">public string toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>Medida</Name>
+        <Access>Public</Access>
+        <Location left="441" top="433" />
+        <Size width="162" height="184" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">double peso</Member>
+        <Member type="Field">double circunferencia</Member>
+        <Member type="Field">string notas</Member>
+        <Member type="Field">string fecha</Member>
+        <Member type="Method">public string toString()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>EvolutionChart</Name>
+        <Access>Public</Access>
+        <Location left="562" top="710" />
+        <Size width="223" height="134" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Medida&gt; medidas</Member>
+        <Member type="Constructor">public EvolutionChart(List&lt;Medida&gt; medidas)</Member>
+        <Member type="Method">public void rellenarGrafico()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ListadoMedidas</Name>
+        <Access>Public</Access>
+        <Location left="282" top="710" />
+        <Size width="223" height="134" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private List&lt;Medida&gt; medidas</Member>
+        <Member type="Constructor">public ListadoMedidas(List&lt;Medida&gt; medidas)</Member>
+        <Member type="Method">public void rellenarListado()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>AddMedidaForm</Name>
+        <Access>Public</Access>
+        <Location left="35" top="710" />
+        <Size width="211" height="134" />
+        <Collapsed>False</Collapsed>
+        <Member type="Field">private RegistroMedidas registroMedidas</Member>
+        <Member type="Constructor">public AddMedidaForm(List&lt;Medida&gt; medidas)</Member>
+        <Member type="Method">public void guardar()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>MedidasForm</Name>
+        <Access>Public</Access>
+        <Location left="282" top="885" />
+        <Size width="211" height="138" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">public void addMedida()</Member>
+        <Member type="Method">public void mostarGrafico()</Member>
+        <Member type="Method">public void listarMes()</Member>
         <Modifier>None</Modifier>
       </Entity>
     </Entities>
@@ -144,13 +217,55 @@
         <Label>
         </Label>
         <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>1025</X>
+          <Y>692</Y>
+        </BendPoint>
       </Relationship>
       <Relationship type="Dependency" first="6" second="4">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1270</X>
+          <Y>680</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Association" first="7" second="8">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="2" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>628</X>
+          <Y>532</Y>
+        </BendPoint>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Aggregation</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="9" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="10" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
+      </Relationship>
+      <Relationship type="Association" first="11" second="7">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <Direction>Unidirectional</Direction>
+        <AssociationType>Association</AssociationType>
       </Relationship>
     </Relationships>
   </ProjectItem>
