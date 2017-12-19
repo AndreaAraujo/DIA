@@ -14,27 +14,6 @@
         <Member type="Field">int segundos</Member>
         <Member type="Field">int distancia</Member>
         <Member type="Field">string notas</Member>
-        <Member type="Field">date fecha</Member>
-        <Member type="Method">public string toString()</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
-        <Name>Actividades</Name>
-        <Access>Public</Access>
-        <Location left="179" top="33" />
-        <Size width="188" height="281" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">List&lt;Actividad&gt; actividades</Member>
-        <Member type="Method">public void Add(Actividad a)</Member>
-        <Member type="Method">public void Delete(Actividad a)</Member>
-        <Member type="Method">public int Count()</Member>
-        <Member type="Method">public void Get(int i)</Member>
-        <Member type="Method">public void GuardarXML()</Member>
-        <Member type="Method">public static Actividades RecuperaXML()</Member>
-        <Member type="Method">public int DistanciaMensual(int mes)</Member>
-        <Member type="Method">public int[] DistanciasMensuales()</Member>
-        <Member type="Method">public int TiempoMensual(int mes)</Member>
-        <Member type="Method">public int[] TiemposMensuales()</Member>
         <Member type="Method">public string toString()</Member>
         <Modifier>None</Modifier>
       </Entity>
@@ -45,7 +24,6 @@
         <Size width="181" height="185" />
         <Collapsed>False</Collapsed>
         <Member type="Field">List&lt;Actividades&gt; actividades</Member>
-        <Member type="Field">string notas</Member>
         <Member type="Field">Medida medida</Member>
         <Member type="Field">Date fecha</Member>
         <Member type="Method">public Entrenamiento CreaEntrenamiento(List&lt;Actividad&gt; actividades, string notas, Medida medida, Date fecha)</Member>
@@ -114,31 +92,14 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>RegistroMedidas</Name>
-        <Access>Public</Access>
-        <Location left="48" top="433" />
-        <Size width="188" height="213" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">List&lt;Medida&gt; medidas</Member>
-        <Member type="Method">public void Add(Medida m)</Member>
-        <Member type="Method">public void Delete(Actividad a)</Member>
-        <Member type="Method">public int Count()</Member>
-        <Member type="Method">public void GuardaXML()</Member>
-        <Member type="Method">public static Actividades RecuperaXML()</Member>
-        <Member type="Method">public List&lt;Medida&gt; MedidasMes(string mes)</Member>
-        <Member type="Method">public string toString()</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
         <Name>Medida</Name>
         <Access>Public</Access>
-        <Location left="441" top="433" />
+        <Location left="442" top="433" />
         <Size width="162" height="184" />
         <Collapsed>False</Collapsed>
         <Member type="Field">double peso</Member>
         <Member type="Field">double circunferencia</Member>
-        <Member type="Field">string notas</Member>
-        <Member type="Field">string fecha</Member>
+        <Member type="Field">string comentario</Member>
         <Member type="Method">public string toString()</Member>
         <Modifier>None</Modifier>
       </Entity>
@@ -165,17 +126,6 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>AddMedidaForm</Name>
-        <Access>Public</Access>
-        <Location left="35" top="710" />
-        <Size width="211" height="134" />
-        <Collapsed>False</Collapsed>
-        <Member type="Field">private RegistroMedidas registroMedidas</Member>
-        <Member type="Constructor">public AddMedidaForm(List&lt;Medida&gt; medidas)</Member>
-        <Member type="Method">public void guardar()</Member>
-        <Modifier>None</Modifier>
-      </Entity>
-      <Entity type="Class">
         <Name>MedidasForm</Name>
         <Access>Public</Access>
         <Location left="282" top="916" />
@@ -189,16 +139,12 @@
     </Entities>
     <Relationships>
       <Relationship type="Association" first="1" second="0">
-        <Label>
-        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="2" second="0">
-        <Label>
-        </Label>
+      <Relationship type="Association" first="2" second="1">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Horizontal</EndOrientation>
         <Direction>Unidirectional</Direction>
@@ -207,18 +153,14 @@
       <Relationship type="Association" first="3" second="2">
         <Label>
         </Label>
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Aggregation</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="4" second="3">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Aggregation</AssociationType>
       </Relationship>
-      <Relationship type="Dependency" first="5" second="4">
+      <Relationship type="Dependency" first="4" second="3">
+        <Label>
+        </Label>
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -226,7 +168,9 @@
           <Y>709</Y>
         </BendPoint>
       </Relationship>
-      <Relationship type="Dependency" first="6" second="4">
+      <Relationship type="Dependency" first="5" second="3">
+        <Label>
+        </Label>
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="True">
@@ -234,53 +178,19 @@
           <Y>680</Y>
         </BendPoint>
       </Relationship>
-      <Relationship type="Association" first="7" second="8">
-        <Label>
-        </Label>
-        <StartOrientation>Horizontal</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Aggregation</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="2" second="8">
-        <Label>
-        </Label>
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Horizontal</EndOrientation>
-        <BendPoint relativeToStartShape="False">
-          <X>628</X>
-          <Y>532</Y>
-        </BendPoint>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Aggregation</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="9" second="8">
-        <Label>
-        </Label>
+      <Relationship type="Association" first="7" second="6">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="10" second="8">
-        <Label>
-        </Label>
+      <Relationship type="Association" first="8" second="6">
         <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="11" second="7">
-        <Label>
-        </Label>
-        <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
-        <Direction>Unidirectional</Direction>
-        <AssociationType>Association</AssociationType>
-      </Relationship>
-      <Relationship type="Association" first="12" second="9">
-        <Label>
-        </Label>
+      <Relationship type="Association" first="9" second="7">
         <StartOrientation>Horizontal</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
         <BendPoint relativeToStartShape="False">
@@ -290,27 +200,21 @@
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="12" second="11">
-        <Label>
-        </Label>
-        <StartOrientation>Horizontal</StartOrientation>
+      <Relationship type="Association" first="9" second="8">
+        <StartOrientation>Vertical</StartOrientation>
         <EndOrientation>Vertical</EndOrientation>
-        <BendPoint relativeToStartShape="True">
-          <X>150</X>
-          <Y>1030</Y>
-        </BendPoint>
-        <BendPoint relativeToStartShape="False">
-          <X>130</X>
-          <Y>869</Y>
-        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
-      <Relationship type="Association" first="12" second="10">
+      <Relationship type="Association" first="1" second="6">
         <Label>
         </Label>
         <StartOrientation>Vertical</StartOrientation>
-        <EndOrientation>Vertical</EndOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>820</X>
+          <Y>542</Y>
+        </BendPoint>
         <Direction>Unidirectional</Direction>
         <AssociationType>Association</AssociationType>
       </Relationship>
